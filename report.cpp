@@ -5,8 +5,9 @@ class Report{
     int adno;
     char name[20];
     float sub[5];
+    int sum=0;
     float avarge=0;
-    float getavg(float average);
+    float getavg(float avarge);
     public:
     void read(){
         cout<<"Enter adno: ";
@@ -29,8 +30,10 @@ class Report{
     }
 };
 float Report::getavg(float avarge){
-    avarge=sub[0]+sub[1]+sub[2]+sub[3]+sub[4];
-    return avarge/5;
+    for(int i=0;i<5;i++){
+        sum+=sub[i];
+    }
+    return avarge=sum/5;
 }
 
 

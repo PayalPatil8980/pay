@@ -8,7 +8,9 @@ class Book{
     char booktitle[20];
     float price;
     int n;
-    float totalcost(int n,float price);
+    float totalcost(int n,float price){
+        return price*n;
+    }
     public:
 
     void input(){
@@ -17,7 +19,7 @@ class Book{
         cout<<"Enter booktitle:";
         cin>>booktitle;
         cout<<"Enter book price:";
-        cin>>price;
+        cin>>price; 
     }
     void purchase(){
         cout<<"Enter the no of coppies:";
@@ -25,11 +27,11 @@ class Book{
         cout<<"Total cost is:"<<totalcost(n,price);
     }
 };
-
+/*
 float Book::totalcost(int n,float price){
     return price*n;
 }
-
+*/
 int main(){
     Book s1;
     s1.input();
