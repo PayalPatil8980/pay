@@ -36,7 +36,6 @@ float Report::getavg(float avarge){
     return avarge=sum/5;
 }
 
-
 int main(){
     Report s1;
     s1.read();
