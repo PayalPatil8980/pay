@@ -1,89 +1,137 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-class Balance{
-    public:
-    int p0001=20000;
-    int k0002=30000;
-    int n0003=12322;
-};
-class Withdraw:public Balance{
-    public:
-    int n,totalbal,t1;
-    void printdata(){
-    cout<<"Enter amount for withdraw: ";
-    cin>>n;
-    totalbal=p0001-n;
-    cout<<"Total balance is: "<<totalbal<<endl;
-    }
-    void diposit(){
-        int money;
-        int n1;
-        cout<<"Enter no for diposit money: ";
-        cin>>n1;
-        money=totalbal+n1;
-        cout<<"Total balance of the Account:"<<money<<endl;
-    }
-    void display(){
 
-        cout<<"current Balance is: "<<p0001<<endl;
-    }
-};/*
-class Totalbill:public Withdraw{
+class Bank{
+    int p001=001;
+    int p002=002;
+    int p003=003;
+    int bal1=20000;
+    int bal2=30000;
+    int bal3=40000;
     public:
-    void display(){
-        cout<<"current Balance is: "<<totalbal<<endl;
+     int n1,n2,n3,m1,m3,totalbal,diposit1;
+    void with(int pin){
+       
+        if(pin==p001){
+            cout<<"Enter the Amouunt for withdraw: ";
+            cin>>n1;
+        totalbal=bal1-n1;
+        }
+        else if(pin==p002){
+            cout<<"Enter the Amouunt for withdraw: ";
+            cin>>n1;
+        totalbal=bal2-n1;
+        }
+        else if(pin==p003){
+            cout<<"Enter the Amouunt for withdraw: ";
+            cin>>n1;
+        totalbal=bal3-n1;
+        }
+        cout<<"Total is"<<totalbal<<endl;
+
+    }
+    void diposit(int pin){
+        int n2;
+        if(pin==p001){
+            cout<<"Enter the Amouunt for diposit: ";
+            cin>>n2;
+        diposit1=bal1+n2;
+        }
+        else if(pin==p002){
+            cout<<"Enter the Amouunt for diposit: ";
+            cin>>n2;
+        diposit1=bal1+n2;
+        }
+        else if(pin==p003){
+            cout<<"Enter the Amouunt for diposit: ";
+            cin>>n2;
+        diposit1=bal1+n2;
+        }
+        cout<<"Total deposit is: "<<diposit1<<endl;
+    }
+    void balance(int pin){
+        
+        if(pin==p001){
+            if(bal1>totalbal){
+                m1=bal1-totalbal;
+                cout<<"Current balace is: "<<m1<<endl;
+            }
+            else if(bal1<diposit1){
+                m3=bal1+diposit1;
+                cout<<"current balance is: "<<m3<<endl;
+            }
+            else{
+                cout<<"current balance is: "<<bal1;
+            }
+        }
+        else if(pin==p002){
+            if(bal1>totalbal){
+                m1=bal1-totalbal;
+                cout<<"Current balace is: "<<m1<<endl;
+            }
+            else if(bal1<diposit1){
+                m3=bal1+diposit1;
+                cout<<"current balance is: "<<m3<<endl;
+            }
+            else{
+                cout<<"current balance is: "<<bal1<<endl;
+            }
+        }
+        else if(pin==p003){
+            if(bal1>totalbal){
+                m1=bal1-totalbal;
+                cout<<"Current balace is: "<<m1<<endl;
+            }
+            else if(bal1<diposit1){
+                m3=bal1+diposit1;
+                cout<<"current balance is: "<<m3<<endl;
+            }
+            else{
+                cout<<"current balance is: "<<bal1<<endl;
+            }
+        }
     }
 };
-*/
-void pindata()
-{
-    int i, pin;
-    cout << "Enter your pinno:";
-    cin >> pin;
-    if (pin == 0001)
-    {
-        cout << "Payal-20000" << endl;
-    }
-    else if (pin == 0002)
-    {
-        cout << "kunal-10000" << endl;
-    }
-    else
-    {
-        cout << "Accocunt no is not available";
-    }
-}
-int main()
-{
-    int n;
-    Withdraw s1;
-   // Totalbill s2;
-    pindata();
-    cout << "1 for withdraw" << endl;
-    cout << "2 for diposit" << endl;
-    cout << "3 for balance check" << endl;
-    cout << "0 for exit" << endl;
-
-    while (n != 0)
-    {
-        cout << "Enter your choice: ";
-        cin >> n;
+int main(){
+    Bank b1;
+    int n,pin;
+    cout<<"Enter the pin: ";
+    cin>>pin;
+    if(pin==001){
+            cout<<"Payal-20000"<<endl;
+        }
+    if(pin==002){
+            cout<<"Kunal-30000"<<endl;
+        }
+    if(pin==003){
+            cout<<"Krishna-40000"<<endl;
+        }
+        
+    cout<<"1 for withdraw"<<endl;
+    cout<<"2 for Diposit"<<endl;
+    cout<<"3 for Blance Check"<<endl;
+    cout<<"4 for Exit"<<endl;
+    if(pin==001||pin==002||pin==003){
+    while(n!=0){
+        cout<<"Enter your choice:";
+        cin>>n;
         switch (n)
         {
         case 1:
-           
-            s1.printdata();
+            b1.with(pin);
             break;
         case 2:
-            s1.display();
+            b1.diposit(pin);
             break;
         case 3:
-            s1.diposit();
+            b1.balance(pin);
             break;
-    
         default:
-            cout<<"choice is not accepatable"<<endl;
             break;
         }
+    }
+    }
+    else{
+        cout<<"Accont not available";
     }
 }
