@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified User Authentication</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <h1>User Authentication</h1>
+
+        <!-- Unified Form -->
+        <form id="auth-form" onsubmit="handleTask(event)">
+            <label for="task-select">Select Task:</label>
+            <select id="task-select" onchange="updateForm()">
+                <option value="signup">Sign Up</option>
+                <option value="login">Log In</option>
+                <option value="forgot">Forgot Password</option>
+                <option value="changepass">Change Password</option>
+            </select>
+
+            <!-- Username -->
+            <div id="username-field">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username" required>
+            </div>
+
+            <!-- Password -->
+            <div id="password-field">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+            </div>
+
+            <!-- Confirm Password -->
+            <div id="confirm-password-field">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm password">
+            </div>
+
+            <!-- New Password -->
+            <div id="new-password-field">
+                <label for="new-password">New Password</label>
+                <input type="password" id="new-password" placeholder="Enter new password">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+
+            <!-- Output Message -->
+            <p id="output-message"></p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

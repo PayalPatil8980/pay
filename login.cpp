@@ -8,8 +8,23 @@ class Login{
     string confirmpassword;
     public:
     void signup(){
+        do{
         cout<<"Enter username: ";
         cin>>username;
+        int lettercount=0,digitcount=0,alphacount=0;
+        for(char c:username){
+            if(isalpha(c))lettercount++;
+            if(isdigit(c))digitcount++;
+            if(c=='@') alphacount++;
+        }
+        if(lettercount>0 && digitcount>0 && alphacount>0){
+            break;
+        }
+        else{
+            cout<<"you must Enter character,@,numbers in username please try again!"<<endl;
+        }
+
+        }while (true);
         cout<<"Enter password: ";
         cin>>password;
         cout<<"confirm your password:";
@@ -20,7 +35,9 @@ class Login{
         else{
             cout<<"fill password correctly!"<<endl;
         }
-
+        
+        
+        
     }
     void login(){
         string inputusername,inputpassword;
@@ -73,6 +90,7 @@ int main(){
     cout<<"2 for login"<<endl;
     cout<<"3 for forgetpassword"<<endl;
     cout<<"4 for change password"<<endl;
+    cout<<"5 for Logout"<<endl;
     cout<<"0 for Exit"<<endl;
     cout<<"-------------------------"<<endl;
     while(n!=0){
@@ -92,6 +110,7 @@ int main(){
             break;
         case 4:
             l1.changepass();
+            break;
         default:
             cout<<"please enter the right choice"<<endl;
             break;
