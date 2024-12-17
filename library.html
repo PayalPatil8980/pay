@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <style>
+        /* CSS Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e9ecef;
+            border: 1px solid #ccc;
+        }
+        #booksList, #issuedBooks {
+            list-style: none;
+            padding: 0;
+        }
+        #booksList li, #issuedBooks li {
+            padding: 5px;
+            background: #f9f9f9;
+            margin-bottom: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+        <!-- Form Section -->
+        <form id="libraryForm">
+            <!-- Login/Signup Section -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <button type="button" onclick="signup()">Sign Up</button>
+            <button type="button" onclick="login()">Log In</button>
+
+            <!-- Book Section -->
+            <label for="action">Choose Action:</label>
+            <select id="action" onchange="showActionSection()">
+                <option value="">--Select--</option>
+                <option value="view">View Books</option>
+                <option value="issue">Issue Book</option>
+                <option value="return">Return Book</option>
+                <option value="issuedBooks">Show Issued Books</option>
+            </select>
+
+            <!-- Dynamic Sections -->
+            <div id="dynamicSection"></div>
+        </form>
+
+        <!-- Output Section -->
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        // JavaScript Logic
+        const books = [
+            { id: 1, name: "Java" },
+            { id: 2, name: "HTML" },
+            { id: 3, name: "CSS" },
+            { id: 4, name: "React" }
+        ];
+
+        let issuedBooks = [];
+        let loggedInUser = null;
+        let users = {};
+
+        function signup() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username in users) {
+                alert("Username already exists. Please log in.");
+            } else {
+                users[username] = password;
+                alert("Account created successfully!");
+            }
+        }
+
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (users[username] && users[username] === password) {
+                loggedInUser = username;
+                alert("Logged in successfully!");
+            } else {
+                alert("Invalid username or password.");
+            }
+        }
+
+        function showActionSection() {
+            const action = document.getElementById("action").value;
+            const section = document.getElementById("dynamicSection");
+            section.innerHTML = "";
+
+            if (!loggedInUser) {
+                alert("Please log in first.");
+                return;
+            }
+
+            if (action === "view") {
+                viewBooks();
+            } else if (action === "issue") {
+                section.innerHTML = `
+                    <label for="bookId">Enter Book ID to Issue:</label>
+                    <input type="number" id="bookId" placeholder="Enter Book ID">
+                    <button type="button" onclick="issueBook()">Issue Book</button>
+                `;
+            } else if (action === "return") {
+                section.innerHTML = `
+                    <label for="bookId">Enter Book ID to Return:</label>
+                    <input type="number" id="bookId" placeholder="Enter Book ID">
+                    <button type="button" onclick="returnBook()">Return Book</button>
+                `;
+            } else if (action === "issuedBooks") {
+                showIssuedBooks();
+            }
+        }
+
+        function viewBooks() {
+            const output = document.getElementById("output");
+            let html = "<h3>Available Books:</h3><ul id='booksList'>";
+            books.forEach(book => {
+                html += `<li>ID: ${book.id} - ${book.name}</li>`;
+            });
+            html += "</ul>";
+            output.innerHTML = html;
+        }
+
+        function issueBook() {
+            const bookId = document.getElementById("bookId").value;
+            const book = books.find(b => b.id == bookId);
+
+            if (book) {
+                issuedBooks.push({ user: loggedInUser, book });
+                alert(`Book "${book.name}" issued successfully!`);
+            } else {
+                alert("Invalid Book ID.");
+            }
+        }
+
+        function returnBook() {
+            const bookId = document.getElementById("bookId").value;
+            const index = issuedBooks.findIndex(b => b.user === loggedInUser && b.book.id == bookId);
+
+            if (index !== -1) {
+                alert(`Book "${issuedBooks[index].book.name}" returned successfully!`);
+                issuedBooks.splice(index, 1);
+            } else {
+                alert("Book not found or already returned.");
+            }
+        }
+
+        function showIssuedBooks() {
+            const output = document.getElementById("output");
+            let html = `<h3>Issued Books for ${loggedInUser}:</h3><ul id='issuedBooks'>`;
+            issuedBooks
+                .filter(b => b.user === loggedInUser)
+                .forEach(b => {
+                    html += `<li>ID: ${b.book.id} - ${b.book.name}</li>`;
+                });
+            html += "</ul>";
+            output.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
