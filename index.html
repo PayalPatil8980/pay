@@ -1,0 +1,141 @@
+<!Doctype html>
+
+<html>
+	<head>
+		<title>html type</title>
+        <style>
+            body{
+                background-color:gray;
+            }
+            label{
+                color: red;
+            }
+            input{
+                background-color: black;
+                color: white;
+            }
+        </style>
+    	</head>
+	<body>
+		<!--ordered list-->
+		<ol start="11" type="I">
+			<li>Apple</li>
+			<li>orange</li>
+			<li>kiwi</li>
+		</ol>
+		
+		<!-- unorderd list -->
+		
+		<ul>
+			<li>Apple</li>
+			<li>orange</li>
+			<li>kiwi</li>
+		</ul>
+		
+		<!-- description list -->
+		
+		<dl>
+			<dt>Fruits</dt>
+			<dd>Apple</dd>
+			<dd>orange</dd>
+			<dd>kiwi</dd>
+			<dt>Browsers</dt>
+			<dd>Crome</dd>
+			<dd>Firefox</dd>
+			<dd>Safari</dd>
+			<dd>Brave</dd>
+		</dl>
+		<!-- nesting list -->
+			<ol>
+				<li>
+					<ul>
+					<li>option 1</li>
+					<li>option 2</li>
+					</ul>
+					<li>option 3</li>
+				</li>
+			</ol>
+		<hr><hr>
+		<!-- html input type -->
+         
+		<label>Username: </label>
+		<input type="text" name="username" id=""><br><br>
+		<label>Email: </label>
+		<input type="email" name="email"><br><br>
+		<label>checkbox: </label>
+		<input type="checkbox" name="checkbox">
+		<input type="checkbox" name="checkbox">
+		<input type="checkbox" name="checkbox"><br><br>
+		<label>Gender: </label>
+		<label>Male: </label>
+		<input type="radio" name="gender">
+		<label>Female: </label>
+		<input type="radio" name="gender"><br><br>
+        <label>Mo no: </label>
+        <input type="tel" name="tel" ><br><br>
+        <label>date: </label>
+        <input type="date" name="date"><br><br>
+        <label>Time: </label>
+        <input type="time" name="time" ><br><br>
+        <label>datetime</label>
+        <input type="datetime" name="datetime"><br><br>
+        <label>Date time-local</label>
+        <input type="datetime-local" name="datetime-local"><br><br>
+        <label>password: </label>
+        <input type="password" name="password"><br><br>
+        <label>Range: </label>
+        <input type="range" name="range"><br><br>
+        <label>url</label>
+        <input type="url" name="url"><br><br>
+        <label>Number: </label>
+        <input type="number" name="number"><br><br>
+        <label>Search</label>
+        <input type="search" name="search"><br><br>
+        <label>file</label>
+        <input type="file" name="file"><br><br>
+        <label>Color</label>
+        <input type="color" name="color" ><br><br>
+        <label>month</label>
+        <input type="month" name="month"><br><br>
+        <label>week</label>
+        <input type="week" name="week" id=""><br><br>
+        <input type="button" value="submit"><br><br>
+        <input type="button" value="reset"><br><br>
+
+        <bdo dir="rtl">html</bdo><br><br>
+        <abbr title="html">html</abbr><br><br>
+        <q>html</q><br><br>
+        <!-- selection tags-->
+        <select>
+            <option value="">Please Select</option>
+            <option value="chrome">chrome</option>
+            <option value="safari">safari</option>
+            <option value="firefox">firefox</option>
+        </select>
+
+        <select>
+            <option value="">Please select</option>
+            <optgroup name="Browsers" label="Browsers">
+                <option value="chrome">chrome</option>
+                <option value="safari">safari</option>
+                <option value="firefox">firefox</option>
+            </optgroup>
+            <optgroup name="Fruits" label="Fruits">
+                <option value="mango">mango</option>
+                <option value="kiwi">kiwi</option>
+                <option value="greps">greps</option>
+            </optgroup>
+            
+        </select><br><br>
+
+        <!-- datalist-->
+        <input list="Browsers">
+        <datalist id="Browsers">
+            <option value="chrome">chrome</option>
+            <option value="safari">safari</option>
+            <option value="firefox">firefox</option>
+        </datalist><br><br>
+
+        
+	</body>
+</html>
