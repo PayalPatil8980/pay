@@ -1,141 +1,209 @@
-<!Doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Type</title>
+    <style>
+        /* Center everything */
+        body {
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            align-items: center; /* Centers vertically */
+            height: 100vh; /* Full screen height */
+            flex-direction: column; /* Stacks elements vertically */
+            text-align: center; /* Centers inline elements */
+            background-image: url('12.jpg'); 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
 
-<html>
-	<head>
-		<title>html type</title>
-        <style>
-            body{
-                background-color:gray;
-            }
-            label{
-                color: red;
-            }
-            input{
-                background-color: black;
-                color: white;
-            }
-        </style>
-    	</head>
-	<body>
-		<!--ordered list-->
-		<ol start="11" type="I">
-			<li>Apple</li>
-			<li>orange</li>
-			<li>kiwi</li>
-		</ol>
-		
-		<!-- unorderd list -->
-		
-		<ul>
-			<li>Apple</li>
-			<li>orange</li>
-			<li>kiwi</li>
-		</ul>
-		
-		<!-- description list -->
-		
-		<dl>
-			<dt>Fruits</dt>
-			<dd>Apple</dd>
-			<dd>orange</dd>
-			<dd>kiwi</dd>
-			<dt>Browsers</dt>
-			<dd>Crome</dd>
-			<dd>Firefox</dd>
-			<dd>Safari</dd>
-			<dd>Brave</dd>
-		</dl>
-		<!-- nesting list -->
-			<ol>
-				<li>
-					<ul>
-					<li>option 1</li>
-					<li>option 2</li>
-					</ul>
-					<li>option 3</li>
-				</li>
-			</ol>
-		<hr><hr>
-		<!-- html input type -->
-         
-		<label>Username: </label>
-		<input type="text" name="username" id=""><br><br>
-		<label>Email: </label>
-		<input type="email" name="email"><br><br>
-		<label>checkbox: </label>
-		<input type="checkbox" name="checkbox">
-		<input type="checkbox" name="checkbox">
-		<input type="checkbox" name="checkbox"><br><br>
-		<label>Gender: </label>
-		<label>Male: </label>
-		<input type="radio" name="gender">
-		<label>Female: </label>
-		<input type="radio" name="gender"><br><br>
-        <label>Mo no: </label>
-        <input type="tel" name="tel" ><br><br>
-        <label>date: </label>
-        <input type="date" name="date"><br><br>
-        <label>Time: </label>
-        <input type="time" name="time" ><br><br>
-        <label>datetime</label>
-        <input type="datetime" name="datetime"><br><br>
-        <label>Date time-local</label>
-        <input type="datetime-local" name="datetime-local"><br><br>
-        <label>password: </label>
-        <input type="password" name="password"><br><br>
-        <label>Range: </label>
-        <input type="range" name="range"><br><br>
-        <label>url</label>
-        <input type="url" name="url"><br><br>
-        <label>Number: </label>
-        <input type="number" name="number"><br><br>
-        <label>Search</label>
-        <input type="search" name="search"><br><br>
-        <label>file</label>
-        <input type="file" name="file"><br><br>
-        <label>Color</label>
-        <input type="color" name="color" ><br><br>
-        <label>month</label>
-        <input type="month" name="month"><br><br>
-        <label>week</label>
-        <input type="week" name="week" id=""><br><br>
-        <input type="button" value="submit"><br><br>
-        <input type="button" value="reset"><br><br>
+        /* Center lists */
+        ol, ul, dl {
+            display: inline-block; /* Keeps lists aligned in center */
+            text-align: left; /* Proper list alignment */
+        }
 
-        <bdo dir="rtl">html</bdo><br><br>
-        <abbr title="html">html</abbr><br><br>
-        <q>html</q><br><br>
-        <!-- selection tags-->
-        <select>
-            <option value="">Please Select</option>
-            <option value="chrome">chrome</option>
-            <option value="safari">safari</option>
-            <option value="firefox">firefox</option>
-        </select>
+        /* Center all form elements */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left; /* Aligns text inside form */
+        }
 
-        <select>
-            <option value="">Please select</option>
-            <optgroup name="Browsers" label="Browsers">
-                <option value="chrome">chrome</option>
-                <option value="safari">safari</option>
-                <option value="firefox">firefox</option>
-            </optgroup>
-            <optgroup name="Fruits" label="Fruits">
-                <option value="mango">mango</option>
-                <option value="kiwi">kiwi</option>
-                <option value="greps">greps</option>
-            </optgroup>
-            
-        </select><br><br>
+        /* Keep label and input fields on the same line */
+        .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            width: 320px; /* Adjust width as needed */
+        }
 
-        <!-- datalist-->
-        <input list="Browsers">
-        <datalist id="Browsers">
-            <option value="chrome">chrome</option>
-            <option value="safari">safari</option>
-            <option value="firefox">firefox</option>
-        </datalist><br><br>
+        .form-group label {
+            flex: 1;
+            text-align: right;
+            margin-right: 10px;
+        }
 
-        
-	</body>
+        .form-group input {
+            flex: 2;
+        }
+
+        /* Properly align checkboxes and radio buttons */
+        .checkbox-group, .radio-group {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 220px; /* Adjust width */
+        }
+
+        .checkbox-group input, 
+        .radio-group input {
+            margin-left: 10px;
+        }
+
+        /* Center the buttons */
+        .buttons {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Ordered List -->
+    <ol start="11" type="I">
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Kiwi</li>
+    </ol>
+
+    <!-- Unordered List -->
+    <ul>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Kiwi</li>
+    </ul>
+
+    <!-- Description List -->
+    <dl>
+        <dt>Fruits</dt>
+        <dd>Apple</dd>
+        <dd>Orange</dd>
+        <dd>Kiwi</dd>
+        <dt>Browsers</dt>
+        <dd>Chrome</dd>
+        <dd>Firefox</dd>
+        <dd>Safari</dd>
+        <dd>Brave</dd>
+    </dl>
+
+    <!-- Nested List -->
+    <ol>
+        <li>
+            <ul>
+                <li>Option 1</li>
+                <li>Option 2</li>
+            </ul>
+        </li>
+        <li>Option 3</li>
+    </ol>
+
+    <!-- Form Section (Kept as per your original structure) -->
+    <form>
+        <div class="form-group">
+            <label>Username: </label>
+            <input type="text" name="username">
+        </div>
+
+        <div class="form-group">
+            <label>Email: </label>
+            <input type="email" name="email">
+        </div>
+
+        <div class="checkbox-group">
+            <label>Checkbox: </label>
+            <input type="checkbox" name="checkbox">
+            <input type="checkbox" name="checkbox">
+            <input type="checkbox" name="checkbox">
+        </div><br>
+
+        <div class="radio-group">
+            <label>Gender: </label>
+            <label>  Male <input type="radio" name="gender"></label>
+            <label>Female <input type="radio" name="gender"></label>
+        </div><br>
+
+        <div class="form-group">
+            <label>Mo no: </label>
+            <input type="tel" name="tel">
+        </div>
+
+        <div class="form-group">
+            <label>Date: </label>
+            <input type="date" name="date">
+        </div>
+
+        <div class="form-group">
+            <label>Time: </label>
+            <input type="time" name="time">
+        </div>
+
+        <div class="form-group">
+            <label>Datetime: </label>
+            <input type="datetime" name="datetime">
+        </div>
+
+        <div class="form-group">
+            <label>Date time-local: </label>
+            <input type="datetime-local" name="datetime-local">
+        </div>
+
+        <div class="form-group">
+            <label>Password: </label>
+            <input type="password" name="password">
+        </div>
+
+        <div class="form-group">
+            <label>Range: </label>
+            <input type="range" name="range">
+        </div>
+
+        <div class="form-group">
+            <label>URL: </label>
+            <input type="url" name="url">
+        </div>
+
+        <div class="form-group">
+            <label>Number: </label>
+            <input type="number" name="number">
+        </div>
+
+        <div class="form-group">
+            <label>Search: </label>
+            <input type="search" name="search">
+        </div>
+
+        <div class="form-group">
+            <label>File: </label>
+            <input type="file" name="file">
+        </div>
+
+        <div class="form-group">
+            <label>Color: </label>
+            <input type="color" name="color">
+        </div>
+
+        <div class="buttons">
+            <input type="button" value="Submit">
+            <input type="button" value="Reset">
+        </div>
+    </form>
+
+</body>
 </html>
