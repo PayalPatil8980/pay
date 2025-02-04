@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+            margin: 0;
+        }
+        .box{
+            border: 2px solid black;
+            height: 470px;
+            width: 500px;
+            text-align: center;
+            border-radius: 20px;
+            background-color: beige;
+            box-shadow: 9px 9px 15px rgba(0, 0, 0,0.3)
+        }
+        /* .first{
+            margin-top: 20px;
+            margin-bottom: 20px;
+           
+        }
+        .first label{
+            display: block;
+            margin-left: 5px;
+        }
+        .first input{
+            border-radius: 5px;
+            height: 30px;
+        } */
+        .label-row{
+            margin-left: 20px;
+            display: flex;
+            margin-right: 20px;
+            gap:195px;
+
+        }
+        .input-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+        .input-row input {
+            margin-right: 15px;
+            margin-left: 10px;
+            width: 200px; /* Adjust the width as needed */
+        }
+
+        .input-row input {
+            border-radius: 5px;
+            height: 30px;
+        }
+        .second{
+            margin-top: 20px;
+            padding:0px;
+            margin-left: 20px;
+            text-align: left;
+        }
+        .second input{
+            height: 30px;
+            border-radius: 5px;
+            width: 30vw;
+        }
+        .container{
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-left: 22px;
+           
+              
+        }
+        .label{
+            margin-top: 5px;
+            margin-left: 20px;
+            color: black;
+            text-align: left;
+            display: block;
+        }
+        .radio{
+            border: 2px solid black;
+            height: 30px;
+            width: 200px;
+            align-items: center;
+            border-radius: 10px;
+           
+        }
+        .forth {
+            margin-top: 20px;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .forth textarea{
+            margin-top: 10px;
+            height: 90px;
+            width: 29.5vw;
+            display: block;
+            margin-left: 5px;
+            border: 2px solid black;
+            border-radius: 10px;
+            resize: none;
+        }
+        .forth label{
+            display: block;
+            margin-left: 10px;
+        }
+        .sixth{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .sixth label{
+            display: flex;
+            margin-left: 20px;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <h2>Contact us</h2>
+    <!-- <div class="first">
+        <label for="username">username *</label>
+        <input type="text" name="username" id="username">
+        <label for="Lastname">lastname *</label>
+        <input type="text" name="lastname" id="lastname">
+    </div> -->
+
+    <div class="first">
+        <div class="label-row">
+            <label for="username">Username</label>
+            <label for="lastname">Lastname</label>
+        </div>
+        <div class="input-row">
+            <input type="text" name="username" id="username">
+            <input type="text" name="lastname" id="lastname">
+        </div>
+    </div>
+    
+    <div class="second">
+        <label for="email">Email *</label><br>
+        <input type="email" name="email" id="">
+    </div>
+
+    <label for="query" class="label">Query-Type *</label><br>
+
+    <div class="container">
+    <div class="radio">   
+        <input type="radio" name="enquiry" id="dip">
+        <label for="General">General Enqairy</label>
+    </div>
+    <div class="radio">
+        <input type="radio" name="enquiry" id="">
+        <label for="support">support request</label>
+    </div>
+    </div>
+    <div class="forth">
+        <label for="message">Message *</label>
+        <textarea name="message" id=""></textarea>
+    </div>
+    <div class="sixth">
+        <label>
+        <input type="checkbox" name="checkbox" id="">
+        i coneernd to team</label>
+    </div>
+</div>
+</body>
+</html>
