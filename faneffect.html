@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            border-radius: 100%;
+            height: 60px;
+            width: 50px;
+        }
+
+        img {
+            padding: 50px;
+            height: 60vh;
+            border-radius: 50%;
+            animation: fananim linear infinite;
+        }
+
+        @keyframes fananim {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <img src="ventilation.png" alt="" id="img">
+        <button onclick="myfuncon()" style="background-color: green;">On</button>
+        <button onclick="myfuncoff()" style="background-color: red;">Off</button>
+        <button onclick="myfunc2()">1</button>
+        <button onclick="myfunc3()">2</button>
+        <button onclick="myfunc4()">3</button>
+    </div>
+    <script src="script12.js"></script>
+</body>
+
+</html>
