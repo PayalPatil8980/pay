@@ -49,7 +49,35 @@
         <button onclick="myfunc3()">2</button>
         <button onclick="myfunc4()">3</button>
     </div>
-    <script src="script12.js"></script>
+    <script>
+        let a = document.getElementById("img");
+        let isfanon = false;
+
+        function myfuncon() {
+            isfanon = true;
+            a.style.animationDuration = 3 + "s";
+        }
+        function myfuncoff() {
+            isfanon = false;
+            a.style.animationDuration = 0 + "s";
+        }
+        function myfunc2() {
+            if (isfanon) {
+                a.style.animationDuration = 1 + "s";
+            }
+        }
+        function myfunc3() {
+            if (isfanon) {
+                a.style.animationDuration = 0.5 + "s";
+            }
+        }
+        function myfunc4() {
+            if (isfanon) {
+                a.style.animationDuration = 0.1 + "s";
+            }
+        }
+    </script>
+
 </body>
 
 </html>
