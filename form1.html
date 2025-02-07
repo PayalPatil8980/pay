@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+
+            background-color: #f0f4f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .box {
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-input {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-input label {
+            flex: 1;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .form-input input {
+            flex: 2;
+            font-weight: 14px;
+            padding: 8px;
+            border: 1ps solid #ccc;
+            color: white;
+            border-radius: 4px;
+            background-color: rgb(129, 133, 134);
+        }
+
+        .button {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .button input {
+            margin: 20px;
+            padding: 10px 20px;
+            font-weight: 14px;
+            background-color: rgb(129, 133, 134);
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="get">
+        <div class="box">
+            <h1>Html Form</h1>
+            <div class="form-input">
+                <label for="firstname">First Name </label>
+                <input type="text" name="firstname" class="form-input">
+            </div>
+            <div class="form-input">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" class="form-input"><br>
+            </div>
+            <div class="form-input">
+                <label for="dob">Date of Birth</label>
+                <input type="text" name="Dob" class="form-input"><br>
+            </div>
+            <div class="form-input">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-input"><br>
+            </div>
+            <div class="form-input">
+                <label for="mno">Mobile No</label>
+                <input type="tel" name="tel" class="form-input"><br>
+            </div>
+            <div class="button">
+                <input type="submit" value="submit">
+                <input type="reset" value="reset">
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
