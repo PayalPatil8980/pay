@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Alphabet Limit</title>
+</head>
+<body>
+    <label for="password">Enter Password:</label>
+    <input type="text" id="password" maxlength="20">
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("password").addEventListener("input", function () {
+            let input = this.value;
+            let maxAlphabets = 10; // Fixed alphabet limit
+            let alphabetsOnly = input.replace(/[^a-zA-Z]/g, ""); // Remove non-alphabet characters
+            
+            if (alphabetsOnly.length > maxAlphabets) {
+                alphabetsOnly = alphabetsOnly.substring(0, maxAlphabets);
+            }
+
+            this.value = alphabetsOnly; // Update input field
+            document.getElementById("message").textContent = `Alphabets Used: ${alphabetsOnly.length}/${maxAlphabets}`;
+        });
+    </script>
+</body>
+</html>

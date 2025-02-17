@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+
+        }
+        nav{
+            margin-top: 20px;
+            height: 60px;
+            padding: 10px 20px;
+            background-color: pink;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .menu{
+            display: flex;
+            list-style: none;
+            margin-left: auto;
+        }
+        .menu li{
+            margin-left: 60px ;
+        }
+        .menu li a{
+            text-decoration: none;
+        }
+        .menu li a:hover{
+            text-decoration: underline;
+            color: rgb(14, 163, 163);
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column; /* Stack items in a column */
+                align-items: center; /* Center align */
+            }
+
+            .menu {
+                flex-direction: column; /* Make the menu vertical */
+                align-items: center;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .menu li {
+                margin: 10px 0; /* Space between menu items */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">login</a></li>
+                <li><a href="#">registration</a></li>
+            </ul>
+        </nav>
+   
+</body>
+</html>
