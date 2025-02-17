@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: aliceblue;
+}
+.maindiv{
+    max-width: 350px;
+    height: 450px;
+    width: 350px;
+    background-color:  rgb(146, 99, 193);
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+
+
+}
+.firstdiv ,.span,.last{
+    justify-content: center;
+    margin: 5px;
+    width: 90%;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 10px;
+    padding: 10px; 
+    background-color:  rgb(206, 188, 225);
+}
+
+.both{
+    display: flex;
+    gap: 5px;
+    padding: 10px; 
+    
+    
+
+}
+.secondiv{
+    
+    height: 250px;
+    width: 220px;
+    margin: 5px;
+    text-align: center;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(123, 210, 193);
+}
+.inside_1{
+    
+    margin-top:10px;
+    width: 140px;
+    height: 150px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 10px;
+    background-color: pink;
+}
+.inside_first,.inside_second{
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    margin: 10px;
+    text-align: center;
+    background-color:  rgb(11, 214, 123);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.inside_2{
+    border-radius: 10px;
+    border: none;
+    background-color:  rgb(156, 81, 171);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    height: 65px;
+    margin-bottom: 10px;
+    margin: 10px;
+    text-align:center;   
+}
+
+
+
