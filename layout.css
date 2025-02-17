@@ -11,13 +11,11 @@ body{
 }
 .maindiv{
     max-width: 350px;
-    height: 450px;
+    height: 470px;
     width: 350px;
     background-color:  rgb(146, 99, 193);
     border-radius: 10px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
-
-
 }
 .firstdiv ,.span,.last{
     justify-content: center;
@@ -31,18 +29,17 @@ body{
     padding: 10px; 
     background-color:  rgb(206, 188, 225);
 }
+.p{
+    margin-top: 130px;
+}
 
 .both{
     display: flex;
     gap: 5px;
     padding: 10px; 
-    
-    
-
 }
 .secondiv{
-    
-    height: 250px;
+    height: 270px;
     width: 220px;
     margin: 5px;
     text-align: center;
@@ -62,6 +59,7 @@ body{
     border: none;
     border-radius: 10px;
     background-color: pink;
+    
 }
 .inside_first,.inside_second{
     border: none;
